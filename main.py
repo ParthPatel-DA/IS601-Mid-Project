@@ -11,6 +11,11 @@ def read_json_file(filename):
         data = json.load(file)
     return data
 
+def write_json_file(filename, data):
+    """Utility Function - Writes a dictionary to a JSON file"""
+    with open(filename, 'w') as file:
+        json.dump(data, file)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('filename')
@@ -19,3 +24,4 @@ if __name__ == "__main__":
     filename = args.filename
 
     data = read_json_file(filename)
+    write_json_file('data.json', data)
