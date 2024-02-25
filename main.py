@@ -16,6 +16,13 @@ def write_json_file(filename, data):
     with open(filename, 'w') as file:
         json.dump(data, file)
 
+def generate_customer_data(data):
+    """Generates a dictionary of customer data"""
+    customer_data = {}
+    for order in data:
+        customer_data[order['phone']] = order['name']
+    return customer_data
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('filename')
@@ -24,4 +31,7 @@ if __name__ == "__main__":
     filename = args.filename
 
     data = read_json_file(filename)
-    write_json_file('data.json', data)
+
+    customer_data = generate_customer_data(data)
+    write_json_file('customers.json', customer_data)
+
