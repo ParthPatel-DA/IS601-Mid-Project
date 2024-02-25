@@ -23,6 +23,20 @@ def generate_customer_data(data):
         customer_data[order['phone']] = order['name']
     return customer_data
 
+def generate_order_data(data):
+    """Generates a dictionary of order data"""
+    order_data = {}
+    for order in data:
+        for item in order['items']:
+            if item['name'] in order_data:
+                order_data[f"{item['name']}"]['orders'] += 1
+            else:
+                order_data[f"{item['name']}"] = {
+                    'price': item['price'],
+                    'orders': 1
+                }
+    return order_data
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('filename')
@@ -35,3 +49,5 @@ if __name__ == "__main__":
     customer_data = generate_customer_data(data)
     write_json_file('customers.json', customer_data)
 
+    order_data = generate_order_data(data)
+    write_json_file('items.json', order_data)
