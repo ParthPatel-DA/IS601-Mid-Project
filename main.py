@@ -16,12 +16,18 @@ def write_json_file(filename, data):
     with open(filename, 'w') as file:
         json.dump(data, file)
 
+def sort_data(data):
+    """Utility Function - Sorts a dictionary by key"""
+    return dict(sorted(data, key=lambda x: x[0]))
+
 def generate_customer_data(data):
     """Generates a dictionary of customer data"""
     customer_data = {}
     for order in data:
         customer_data[order['phone']] = order['name']
-    return customer_data
+
+    sorted_customer_data = sort_data(customer_data.items())
+    return sorted_customer_data
 
 def generate_order_data(data):
     """Generates a dictionary of order data"""
@@ -35,7 +41,9 @@ def generate_order_data(data):
                     'price': item['price'],
                     'orders': 1
                 }
-    return order_data
+
+    sorted_order_data = sort_data(order_data.items())
+    return sorted_order_data
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
