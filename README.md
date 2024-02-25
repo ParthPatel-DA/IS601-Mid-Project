@@ -62,7 +62,7 @@ Following files will be generated after running the project:
 | 7    | 02-25-2024 | [Updated result data in sorted order](https://github.com/ParthPatel-DA/IS601-Mid-Project/commit/ca6490546dd0d892e36db266cb2cb4147282b062)                        |
 | 8    | 02-25-2024 | [Added function to combine all operation in single function](https://github.com/ParthPatel-DA/IS601-Mid-Project/commit/bc648e9df81e8fbd5a5c469ae7d9d882bcd5e429) |
 | 9    | 02-25-2024 | [Added both result file](https://github.com/ParthPatel-DA/IS601-Mid-Project/commit/bc6ffdde662c13b174fff91feab6113b674f945b)                                     |
-| 10   | 02-25-2024 | Updated README.md file                                                                                                                                           |
+| 10   | 02-25-2024 | [Updated README.md file](https://github.com/ParthPatel-DA/IS601-Mid-Project/commit/7be3789033c6b7f1b41a9365c9ee101e92d59ac9)                                     |
 
 ## References:
 
