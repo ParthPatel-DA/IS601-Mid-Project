@@ -45,6 +45,12 @@ def generate_order_data(data):
     sorted_order_data = sort_data(order_data.items())
     return sorted_order_data
 
+def read_and_make_json_file(filename):
+    """Reads a JSON file and generates two new JSON files"""
+    data = read_json_file(filename)
+    write_json_file('customers.json', generate_customer_data(data))
+    write_json_file('items.json', generate_order_data(data))
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('filename')
@@ -52,10 +58,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     filename = args.filename
 
-    data = read_json_file(filename)
-
-    customer_data = generate_customer_data(data)
-    write_json_file('customers.json', customer_data)
-
-    order_data = generate_order_data(data)
-    write_json_file('items.json', order_data)
+    read_and_make_json_file(filename)
