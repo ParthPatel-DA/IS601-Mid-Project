@@ -6,7 +6,9 @@ import json
 import argparse
 
 def read_json_file(filename):
-    """Utility Function - Reads a JSON file and returns the data as a dictionary"""
+    """
+    Utility Function - Reads a JSON file and returns the data as a dictionary
+    """
     with open(filename, 'r') as file:
         data = json.load(file)
     return data
